@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
 
-class HomeScreen extends Component {
+class SearchScreen extends React.Component {
   static navigationOptions = {
-    title: "Home"
+    title: "Search"
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <Text> HomeScreen </Text>
+        <Text>SearchScreen</Text>
       </View>
     );
   }
 }
 
-export default HomeScreen;
+export default SearchScreen;
 
 const styles = StyleSheet.create({
   container: {
