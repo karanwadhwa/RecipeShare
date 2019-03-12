@@ -8,6 +8,7 @@ import { Icon } from "expo";
 
 import HomeScreen from "../screens/HomeScreen";
 import SearchScreen from "../screens/SearchScreen";
+import RandomRecipeScreen from "../screens/RandomRecipeScreen";
 import FavouritesScreen from "../screens/FavouritesScreen";
 
 const HomeStack = createStackNavigator({
@@ -17,7 +18,7 @@ const HomeStack = createStackNavigator({
 HomeStack.navigationOptions = {
   tabBarLabel: "Home",
   tabBarIcon: ({ tintColor }) => (
-    <Icon.Feather name="home" size={26} color={tintColor} />
+    <Icon.Feather name="home" size={25} color={tintColor} />
   )
 };
 
@@ -28,7 +29,18 @@ const SearchStack = createStackNavigator({
 SearchStack.navigationOptions = {
   tabBarLabel: "Search",
   tabBarIcon: ({ tintColor }) => (
-    <Icon.Feather name="search" size={26} color={tintColor} />
+    <Icon.Feather name="search" size={25} color={tintColor} />
+  )
+};
+
+const RandomStack = createStackNavigator({
+  Random: RandomRecipeScreen
+});
+
+RandomStack.navigationOptions = {
+  tabBarLabel: "Random",
+  tabBarIcon: ({ tintColor }) => (
+    <Icon.Feather name="repeat" size={25} color={tintColor} />
   )
 };
 
@@ -39,7 +51,7 @@ const FavouritesStack = createStackNavigator({
 FavouritesStack.navigationOptions = {
   tabBarLabel: "Favourites",
   tabBarIcon: ({ tintColor }) => (
-    <Icon.Feather name="star" size={26} color={tintColor} />
+    <Icon.Feather name="star" size={25} color={tintColor} />
   )
 };
 
@@ -47,6 +59,7 @@ const MainTabNavigator = createBottomTabNavigator(
   {
     HomeStack,
     SearchStack,
+    RandomStack,
     FavouritesStack
   },
   {
