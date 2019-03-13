@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { FlatList, TouchableOpacity, StyleSheet, Linking } from "react-native";
 import {
   View,
@@ -9,8 +10,9 @@ import {
   Subtitle,
   Heading
 } from "@shoutem/ui";
-
 import Icon from "@expo/vector-icons/Ionicons";
+
+import { setFavRecipe } from "../store/actions/favouriteRecipes";
 
 class RecipeHeader extends Component {
   renderTags = tags => {
@@ -32,8 +34,20 @@ class RecipeHeader extends Component {
           <View />
         )}
 
-        <TouchableOpacity>
-          <Icon name="ios-star" size={24} color="#107AFB" />
+        <TouchableOpacity
+          onPress={() => this.props.setFavRecipe(this.props.recipe)}
+        >
+          <Icon
+            name={
+              this.props.favourites.recipes.some(
+                recipe => recipe.idMeal === this.props.recipe.idMeal
+              )
+                ? "ios-star"
+                : "ios-star-outline"
+            }
+            size={24}
+            color="#107AFB"
+          />
         </TouchableOpacity>
       </View>
     );
@@ -90,7 +104,16 @@ class RecipeHeader extends Component {
   }
 }
 
-export default RecipeHeader;
+const mapStateToProps = state => {
+  return {
+    favourites: state.favourites
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { setFavRecipe }
+)(RecipeHeader);
 
 const styles = StyleSheet.create({
   audienceBadge: {
