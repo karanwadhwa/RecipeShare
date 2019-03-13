@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, StyleSheet, Linking } from "react-native";
+import { FlatList, TouchableOpacity, StyleSheet, Linking } from "react-native";
 import {
   View,
   Caption,
@@ -7,11 +7,55 @@ import {
   ImageBackground,
   Overlay,
   Subtitle,
-  Heading,
-  TouchableOpacity
+  Heading
 } from "@shoutem/ui";
 
+import Icon from "@expo/vector-icons/Ionicons";
+
 class RecipeHeader extends Component {
+  renderTags = tags => {
+    return (
+      <View styleName="horizontal space-between" style={{ padding: 15 }}>
+        {tags !== null ? (
+          <React.Fragment>
+            <Subtitle style={{ paddingRight: 10 }}>Tags:</Subtitle>
+            <FlatList
+              horizontal
+              data={tags.split(",")}
+              renderItem={({ item }) => (
+                <Caption style={styles.audienceBadge}>{item}</Caption>
+              )}
+              keyExtractor={item => item}
+            />
+          </React.Fragment>
+        ) : (
+          <View />
+        )}
+
+        <TouchableOpacity>
+          <Icon name="ios-star" size={24} color="#107AFB" />
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
+  renderYoutube = recipe => {
+    if (recipe.strYoutube !== "") {
+      return (
+        <TouchableOpacity onPress={() => Linking.openURL(recipe.strYoutube)}>
+          <Image
+            style={{ height: 30 }}
+            styleName="small"
+            source={{
+              uri:
+                "https://seeklogo.net/wp-content/uploads/2017/08/youtube-logo.png"
+            }}
+          />
+        </TouchableOpacity>
+      );
+    }
+  };
+
   render() {
     const { recipe } = this.props;
 
@@ -37,33 +81,10 @@ class RecipeHeader extends Component {
           <Subtitle style={{ color: "#777" }}>
             {recipe.strCategory}, {recipe.strArea}
           </Subtitle>
-          <TouchableOpacity onPress={() => Linking.openURL(recipe.strYoutube)}>
-            <Image
-              style={{ height: 30 }}
-              styleName="small"
-              source={{
-                uri:
-                  "https://seeklogo.net/wp-content/uploads/2017/08/youtube-logo.png"
-              }}
-            />
-          </TouchableOpacity>
+          {this.renderYoutube(recipe)}
         </View>
 
-        <View
-          styleName="horizontal"
-          style={{ padding: 15, alignItems: "center" }}
-        >
-          <Subtitle style={{ paddingRight: 10 }}>Tags:</Subtitle>
-          <FlatList
-            horizontal
-            //contentContainerS
-            data={recipe.strTags.split(",")}
-            renderItem={({ item }) => (
-              <Caption style={styles.audienceBadge}>{item}</Caption>
-            )}
-            keyExtractor={item => item}
-          />
-        </View>
+        {this.renderTags(recipe.strTags)}
       </View>
     );
   }
