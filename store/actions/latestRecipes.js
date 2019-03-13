@@ -29,3 +29,10 @@ export const fetchLatestRecipes = () => dispatch => {
     });
   });
 };
+
+export const selectLatestRecipe = recipe => {
+  return {
+    type: SELECT_LATEST_RECIPE,
+    payload: recipe
+  };
+};

@@ -7,12 +7,14 @@ import {
 import { Icon } from "expo";
 
 import HomeScreen from "../screens/HomeScreen";
+import SelectedLatest from "../screens/SelectedLatest";
 import SearchScreen from "../screens/SearchScreen";
 import RandomRecipeScreen from "../screens/RandomRecipeScreen";
 import FavouritesScreen from "../screens/FavouritesScreen";
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen
+  Home: HomeScreen,
+  SelectedLatest
 });
 
 HomeStack.navigationOptions = {

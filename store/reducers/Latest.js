@@ -31,6 +31,11 @@ export default (state = initialState, action) => {
         loading: false,
         refreshing: false
       };
+    case SELECT_LATEST_RECIPE:
+      return {
+        ...state,
+        selectedRecipe: action.payload
+      };
     default:
       return state;
   }

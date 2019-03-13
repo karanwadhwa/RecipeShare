@@ -4,7 +4,10 @@ import { ActivityIndicator, TouchableOpacity, StyleSheet } from "react-native";
 import { View, Subtitle, Caption, Title } from "@shoutem/ui";
 import Masonry from "react-native-masonry";
 
-import { fetchLatestRecipes } from "../store/actions/latestRecipes";
+import {
+  fetchLatestRecipes,
+  selectLatestRecipe
+} from "../store/actions/latestRecipes";
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -22,6 +25,10 @@ class HomeScreen extends Component {
         data: recipe,
         key: recipe.idMeal,
         uri: recipe.strMealThumb,
+        onPress: data => {
+          this.props.selectLatestRecipe(data);
+          this.props.navigation.navigate("SelectedLatest");
+        },
         renderFooter: data => {
           return (
             <View
@@ -94,12 +101,13 @@ const mapStateToProps = state => {
     loading: state.latest.loading,
     refreshing: state.latest.refreshing,
     recipes: state.latest.recipes
+    //selectedRecipe: state.latest.selectedRecipe
   };
 };
 
 export default connect(
   mapStateToProps,
-  { fetchLatestRecipes }
+  { fetchLatestRecipes, selectLatestRecipe }
 )(HomeScreen);
 
 const styles = StyleSheet.create({
