@@ -25,7 +25,7 @@ class RecipeHeader extends Component {
               horizontal
               data={tags.split(",")}
               renderItem={({ item }) => (
-                <Caption style={styles.audienceBadge}>{item}</Caption>
+                <Caption style={styles.badge}>{item}</Caption>
               )}
               keyExtractor={item => item}
             />
@@ -116,7 +116,7 @@ export default connect(
 )(RecipeHeader);
 
 const styles = StyleSheet.create({
-  audienceBadge: {
+  badge: {
     backgroundColor: "#DDEEFF",
     marginRight: 5,
     paddingHorizontal: 3

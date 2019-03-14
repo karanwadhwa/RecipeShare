@@ -11,6 +11,7 @@ import SelectedLatest from "../screens/SelectedLatest";
 import SearchScreen from "../screens/SearchScreen";
 import RandomRecipeScreen from "../screens/RandomRecipeScreen";
 import FavouritesScreen from "../screens/FavouritesScreen";
+import SelectedFavourite from "../screens/SelectedFavourite";
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -47,7 +48,8 @@ RandomStack.navigationOptions = {
 };
 
 const FavouritesStack = createStackNavigator({
-  Settings: FavouritesScreen
+  Settings: FavouritesScreen,
+  SelectedFavourite
 });
 
 FavouritesStack.navigationOptions = {
