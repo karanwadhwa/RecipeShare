@@ -40,7 +40,20 @@ class FavouritesScreen extends React.Component {
 
   render() {
     if (!this.props.recipes[0]) {
-      return <Text>add recipes to your favourites to see them here</Text>;
+      return (
+        <View
+          style={{
+            flex: 1,
+            justifyContent: "center",
+            alignSelf: "center",
+            width: "50%"
+          }}
+        >
+          <Title styleName="h-center">
+            Add recipes to your favourites to see them listed here
+          </Title>
+        </View>
+      );
     }
 
     return (
