@@ -20,6 +20,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": ""
+    "description": "Personal cooking sidekick for recipe inspirations.",
+    "githubUrl": "https://github.com/karanwadhwa/RecipeShare"
   }
 }
