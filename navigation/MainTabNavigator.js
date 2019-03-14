@@ -9,6 +9,7 @@ import { Icon } from "expo";
 import HomeScreen from "../screens/HomeScreen";
 import SelectedLatest from "../screens/SelectedLatest";
 import SearchScreen from "../screens/SearchScreen";
+import SelectedSearchResult from "../screens/SelectedSearchResult";
 import RandomRecipeScreen from "../screens/RandomRecipeScreen";
 import FavouritesScreen from "../screens/FavouritesScreen";
 import SelectedFavourite from "../screens/SelectedFavourite";
@@ -26,7 +27,8 @@ HomeStack.navigationOptions = {
 };
 
 const SearchStack = createStackNavigator({
-  Search: SearchScreen
+  Search: SearchScreen,
+  SelectedSearchResult
 });
 
 SearchStack.navigationOptions = {
