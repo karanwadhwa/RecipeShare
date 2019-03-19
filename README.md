@@ -14,7 +14,7 @@ Or Request a link [here](https://expo.io/@karanwadhwa/RecipeShare).
 
 ## Demo
 
-[![RecipeShare App GIF](https://i.imgur.com/IfqqDeN.gif)](https://expo.io/@karanwadhwa/RecipeShare)
+![RecipeShare App GIF](https://i.imgur.com/IfqqDeN.gif)
 
 ## Installation
 
