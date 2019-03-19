@@ -6,7 +6,7 @@ personal cooking sidekick for recipe inspirations.
 
 ### [Download Expo Client App](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US)
 
-[![Expo QR code](https://i.imgur.com/QH3Wtwc.png)](https://expo.io/@karanwadhwa/RecipeShare)
+[![Expo QR code](https://github.com/karanwadhwa/RecipeShare/blob/master/demo/RecipeShareExpoQRcode.PNG)](https://expo.io/@karanwadhwa/RecipeShare)
 
 With an Android phone, scan this QR code with your [Expo mobile app](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US) to load this project immediately.
 
@@ -14,7 +14,7 @@ Or Request a link [here](https://expo.io/@karanwadhwa/RecipeShare).
 
 ## Demo
 
-![RecipeShare App GIF](https://i.imgur.com/IfqqDeN.gif)
+![RecipeShare App GIF](https://github.com/karanwadhwa/RecipeShare/blob/master/demo/RecipeShareGIF.gif)
 
 ## Installation
 
