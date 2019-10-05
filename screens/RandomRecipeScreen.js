@@ -1,13 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import {
-  View,
-  TouchableOpacity,
-  ActivityIndicator,
-  StyleSheet,
-  RefreshControl
-} from "react-native";
-import Ionicon from "@expo/vector-icons/Ionicons";
+import { ActivityIndicator, StyleSheet, RefreshControl } from "react-native";
+import { Tooltip, Text } from "react-native-elements";
+import FIcon from "@expo/vector-icons/Feather";
 
 import { fetchRandomRecipe } from "../store/actions/randomRecipe";
 
@@ -15,7 +10,23 @@ import SelectedRecipe from "../components/SelectedRecipe";
 
 class RandomRecipeScreen extends React.Component {
   static navigationOptions = {
-    title: "Random Recipes"
+    title: "Random Recipes",
+    headerRight: (
+      <Tooltip
+        containerStyle={{ alignContent: "center" }}
+        height={75}
+        width={175}
+        withPointer={false}
+        backgroundColor="#DDEEFF"
+        popover={
+          <Text style={{ padding: 10, textAlign: "center" }}>
+            Pull-to-Refresh to load new recipes
+          </Text>
+        }
+      >
+        <FIcon name="info" size={24} style={{ marginRight: 15 }} />
+      </Tooltip>
+    )
   };
 
   state = {

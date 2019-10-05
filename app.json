@@ -18,7 +18,13 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.karanwadhwa.RecipeShare"
+    },
+    "android": {
+      "package": "com.karanwadhwa.RecipeShare",
+      "versionCode": 5,
+      "permissions": []
     },
     "description": "Personal cooking sidekick for recipe inspirations.",
     "githubUrl": "https://github.com/karanwadhwa/RecipeShare"

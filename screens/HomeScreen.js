@@ -11,7 +11,7 @@ import {
 
 class HomeScreen extends Component {
   static navigationOptions = {
-    title: "Home"
+    title: "Latest Recipes"
   };
 
   componentDidMount() {
