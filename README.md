@@ -18,7 +18,7 @@ Or Request a link [here](https://expo.io/@karanwadhwa/RecipeShare).
 
 [Imgur](https://i.imgur.com/xuZ9B4B.gif)
 
-![RecipeShare App GIF](https://github.com/karanwadhwa/RecipeShare/blob/master/demo/RecipeShareGIF.gif)]
+![RecipeShare App GIF](https://github.com/karanwadhwa/RecipeShare/blob/master/demo/RecipeShareGIF.gif)
 
 ## Installation
 
@@ -47,3 +47,9 @@ Support them on [Patreon](https://www.patreon.com/thedatadb).
 ## LICENSE
 
 This project is licensed under the [MIT License](https://github.com/karanwadhwa/RecipeShare/blob/master/LICENSE)
+
+<style type="text/css">
+    .markdown-body img {
+        max-height: 75vh;
+    }
+</style>
