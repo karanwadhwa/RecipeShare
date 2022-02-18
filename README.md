@@ -18,7 +18,7 @@ Or Request a link [here](https://expo.io/@karanwadhwa/RecipeShare).
 
 [Imgur](https://i.imgur.com/xuZ9B4B.gif)
 
-<img alt="RecipeShare App GIF" src="https://github.com/karanwadhwa/RecipeShare/blob/master/demo/RecipeShareGIF.gif" height="750px" />
+<img alt="RecipeShare App GIF" src="https://github.com/karanwadhwa/RecipeShare/blob/master/demo/RecipeShareGIF.gif" height="600px" />
 
 ## Installation
 
